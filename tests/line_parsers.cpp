@@ -7,7 +7,7 @@
 
 #include "line_parsers.hpp"
 
-TEST_CASE("get line from value") {
+TEST_CASE("get value from line") {
   std::int64_t value = aoc231::get_value_from_line("1abc2");
   CHECK(value == 12);
 
