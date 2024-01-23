@@ -3,7 +3,9 @@
 
 add_executable(unit-tests)
 
-target_sources(unit-tests PRIVATE unit-tests.cpp)
+target_sources(unit-tests PRIVATE
+               unit-tests.cpp
+               line_parsers.cpp)
 
 target_include_directories(unit-tests PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}
