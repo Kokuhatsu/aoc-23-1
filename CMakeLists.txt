@@ -9,3 +9,4 @@ project(AOC-23-1
 add_subdirectory(cmake)
 include(third_party/list.cmake)
 add_subdirectory(src)
+add_subdirectory(tests)
