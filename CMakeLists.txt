@@ -7,4 +7,5 @@ project(AOC-23-1
         LANGUAGES CXX)
 
 add_subdirectory(cmake)
+include(third_party/list.cmake)
 add_subdirectory(src)
