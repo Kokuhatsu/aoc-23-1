@@ -20,3 +20,20 @@ TEST_CASE("get value from line only digits") {
   value = aoc231::get_value_from_line("treb7uchet");
   CHECK(value == 77);
 }
+
+TEST_CASE("get value from line digits and literals") {
+  std::int64_t value = aoc231::get_value_from_line("two1nine");
+  CHECK(value == 29);
+  value = aoc231::get_value_from_line("eightwothree");
+  CHECK(value == 83);
+  value = aoc231::get_value_from_line("abcone2threexyz");
+  CHECK(value == 13);
+  value = aoc231::get_value_from_line("xtwone3four");
+  CHECK(value == 24);
+  value = aoc231::get_value_from_line("4nineeightseven2");
+  CHECK(value == 42);
+  value = aoc231::get_value_from_line("zoneight234");
+  CHECK(value == 14);
+  value = aoc231::get_value_from_line("7pqrstsixteen");
+  CHECK(value == 76);
+}
