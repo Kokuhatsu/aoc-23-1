@@ -11,7 +11,7 @@ target_include_directories(unit-tests PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}
                            ${CMAKE_SOURCE_DIR}/src/)
 
-target_compile_features(unit-tests PUBLIC cxx_std_20)
+target_compile_features(unit-tests PUBLIC cxx_std_23)
 target_compile_options(unit-tests PRIVATE ${COMMON_COMPILE_OPTIONS})
 set_target_properties(unit-tests PROPERTIES
                       CXX_EXTENSIONS OFF
