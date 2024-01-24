@@ -3,7 +3,6 @@
 
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 #include <print>
 #include <string>
 
@@ -28,7 +27,7 @@ int main() {
     result_with_literals += aoc231::get_value_from_line_with_literals(line);
   }
 
-  std::cout << "result: " << result << std::endl;
+  std::println("result: {}", result);
   std::println("result with literals: {}", result_with_literals);
 
   return 0;
