@@ -22,18 +22,18 @@ TEST_CASE("get value from line only digits") {
 }
 
 TEST_CASE("get value from line digits and literals") {
-  std::int64_t value = aoc231::get_value_from_line("two1nine");
+  std::int64_t value = aoc231::get_value_from_line_with_literals("two1nine");
   CHECK(value == 29);
-  value = aoc231::get_value_from_line("eightwothree");
+  value = aoc231::get_value_from_line_with_literals("eightwothree");
   CHECK(value == 83);
-  value = aoc231::get_value_from_line("abcone2threexyz");
+  value = aoc231::get_value_from_line_with_literals("abcone2threexyz");
   CHECK(value == 13);
-  value = aoc231::get_value_from_line("xtwone3four");
+  value = aoc231::get_value_from_line_with_literals("xtwone3four");
   CHECK(value == 24);
-  value = aoc231::get_value_from_line("4nineeightseven2");
+  value = aoc231::get_value_from_line_with_literals("4nineeightseven2");
   CHECK(value == 42);
-  value = aoc231::get_value_from_line("zoneight234");
+  value = aoc231::get_value_from_line_with_literals("zoneight234");
   CHECK(value == 14);
-  value = aoc231::get_value_from_line("7pqrstsixteen");
+  value = aoc231::get_value_from_line_with_literals("7pqrstsixteen");
   CHECK(value == 76);
 }
