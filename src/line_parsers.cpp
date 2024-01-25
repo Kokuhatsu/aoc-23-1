@@ -45,6 +45,28 @@ namespace {
     return literals;
   }
 
+  auto get_literals_first_char() {
+    std::string result;
+    std::ranges::transform(
+      get_literals()
+      , std::back_inserter(result)
+      , [](std::string literal) {
+        return literal.front();
+      });
+    return result;
+  }
+
+  auto get_literals_last_char() {
+    std::string result;
+    std::ranges::transform(
+      get_literals()
+      , std::back_inserter(result)
+      , [](std::string literal) {
+        return literal.back();
+      });
+    return result;
+  }
+
   auto enumerate_literals() {
     return get_literals() | std::views::enumerate;
   }
@@ -60,7 +82,7 @@ namespace {
     for(const auto& [index, character] : line | std::views::enumerate) {
       if(std::isdigit(character)) {
         return convert_char_to_digit(character);
-      } else if(std::ranges::contains("otfsen", character)) {
+      } else if(std::ranges::contains(get_literals_first_char(), character)) {
         for(const auto& [literal_index, literal] : get_literals()
                                                    | std::views::enumerate)
           if(std::ranges::starts_with(line | std::views::drop(index), literal))
@@ -77,7 +99,7 @@ namespace {
                                          | std::views::enumerate) {
       if(std::isdigit(character)) {
         return convert_char_to_digit(character);
-      } else if(std::ranges::contains("eorxnt", character)) {
+      } else if(std::ranges::contains(get_literals_last_char(), character)) {
         for(const auto& [literal_index, literal] : get_literals()
                                                    | std::views::enumerate)
           if(std::ranges::ends_with(drop_back(line, index), literal))
